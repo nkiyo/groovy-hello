@@ -1,18 +1,20 @@
-import static java.util.stream.Collectors.*;
+import static java.util.stream.Collectors.toList;
 
-def list = new ArrayList<String>(Arrays.asList("tokyo", "nagoya", "osaka", "fukuoka"));
-//println list
-//println list.get(1)
-println "pre list = ${list}"
+List<String> list1 = Arrays.asList("tokyo", "nagoya", "osaka", "fukuoka");
+//List<String> list1 = new ArrayList<String>(Arrays.asList("tokyo", "nagoya", "osaka", "fukuoka"));
+//println list1
+//println list1.get(1)
+println "pre list = ${list1}"
 
-def list2 = list.stream().
+List<String> list2 = list1.stream().
     filter(e -> e.length() > 5).
     map(String::toUpperCase).
     collect(toList());
     //forEach(System.out::println);
 
-println list2.getClass()
 println "list2 ${list2}"
 
 // TODO リストや内容のポインタの比較
 // TODO importの仕方
+// https://www.baeldung.com/java-8-collectors
+// https://qiita.com/nesheep5/items/da42df92397285d4ad0f
