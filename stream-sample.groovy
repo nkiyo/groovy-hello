@@ -8,7 +8,7 @@ println "pre list = ${list1}"
 
 List<String> list2 = list1.stream().
     filter(e -> e.length() > 5).
-    map(String::toUpperCase).
+    map(String::toUpperCase). // TODO これは何？
     collect(toList());
     //forEach(System.out::println);
 
